@@ -40,7 +40,20 @@ This analysis directly answers six core operational questions:
 
 
 ## Data Preparation
-[ADD DATA CLEANING STEPS]
+The dataset was audited for quality and prepared for analytical aggregation through the following steps:
+
+* **Data Quality Verification:** Verified that the dataset contained no missing values, empty cells, or duplicate records.
+* **Calculated Fields & Metrics Creation:** Created calculated fields using explicit business logic and mathematical formulas:
+
+| Metric Name | Analytical Purpose | Formula / Logic |
+| :--- | :--- | :--- |
+| **Achievement Gap** | Measures performance improvement relative to baseline| `Current_Achievement_% - Baseline_%`|
+| **Target Gap** | Measures variance from target benchmark| `Current_Achievement_% - Target_%`|
+| **Target Achievement Rate** | Evaluates proportion of target completed| `Current_Achievement_% / Target_%`|
+| **Clean Energy Access Rate** | Evaluates proportion of beneficiaries with active energy access| `People_Gaining_Clean_Energy_Access / Beneficiaries`|
+| **Training-to-Employment Rate** | Measures conversion of skills training into local jobs| `Local_Jobs_Created / People_Trained`|
+| **Unserved Beneficiaries** | Quantifies beneficiaries currently lacking active clean-energy access| `Beneficiaries - People_Gaining_Clean_Energy_Access`|
+| **Performance Status** | Categorizes entities as meeting, exceeding, or underperforming targets| Nested IF statements|
 
 
 ## Tools & Technologies
